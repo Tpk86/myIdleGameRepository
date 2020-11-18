@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Unspecified title</title>
+				<link rel="stylesheet" href="style.css">
+				<link rel="shortcut icon" href="">
+				<link rel="icon" sizes="196x196" href="">
+				<link rel="apple-touch-icon" sizes="152x152" href="">
+					<script type="text/javascript" src="myScript.js" async></script>
+					<script type="text/javascript" async>
+
+					</script>
+	</head>
+	<body onload="startTime()">
+
+		<p id="myPerformance"></p>
+		<p id="currentDate"></p>
+		<p id="currentTime"></p>
+
+		<script type="text/javascript" async>
+			document.getElementById("myPerformance").innerHTML = "Browser performance (refresh to check) : " + performance.now() + " milliseconds";
+
+				function startTime() {
+					let today = new Date();
+					let h = today.getHours();
+					let m = today.getMinutes();
+						m = checkTime(m);
+					let s = today.getSeconds();
+						s = checkTime(s);
+					let t = setTimeout(startTime, 500);
+					document.getElementById('currentTime').innerHTML = h + ":" + m + ":" + s;
+					document.getElementById("currentDate").innerHTML = "Date : " + today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear();
+				}
+				function checkTime(i) {
+					if (i < 10) {i = "0" + i};
+						return i;
+				}
+
+		</script>
+
+		<script type="text/javascript" async></script>
+	</body>
+</html>
