@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta charset="utf-8">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>Unspecified title</title>
-				<link rel="stylesheet" href="style.css">
-				<link rel="shortcut icon" href="">
-				<link rel="icon" sizes="196x196" href="">
-				<link rel="apple-touch-icon" sizes="152x152" href="">
-					<script type="text/javascript" src="myScript.js" async></script>
-					<script type="text/javascript" async>
+  <head>
+    <title>myIdleGameTitle</title>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Wilhelm Omis">
+    <meta name="description" content="Description of my Idle Game and things...">
+    <meta name="keywords" content="Idle,Sound,TSU,The,The Sound Unique,TheSoundUnique,Unique">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="version" content="0.0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-					</script>
+    <!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="152x152" href="">
+	<link rel="icon" sizes="196x196" href="favicon/android-chrome-192x192">
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+
+    <!--[if lt IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Libraries... if needed
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ -->
+
+    <!-- jQuery (noConflict) boilerplate code -->
+    <script type="text/javascript">
+      jQuery.noConflict();
+      jQuery(function(){
+        console.log("jQuery(noConflict) : Page loading complete !");
+      });
+    </script>
+
+    <!-- Css
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+ -->
+	<link rel="stylesheet" href="style.css">
+
+    <!-- External resources
+		<script type="text/javascript" src="https://github.com/Patashu/break_infinity.js"></script>
+ -->
 	</head>
-	<body onload="startTime()">
 
-		<p id="myPerformance"></p>
-		<p id="currentDate"></p>
-		<p id="currentTime"></p>
+  <body classes="classOne classTwo" onload="startTime()">
 
+  <!-- Something -->
+    		<p id="myPerformance"></p>
+    		<p id="currentDate"></p>
+    		<p id="currentTime"></p>
+
+			<!-- Scripts section -->
 		<script type="text/javascript" async>
 			document.getElementById("myPerformance").innerHTML = "Browser performance (refresh to check) : " + performance.now() + " milliseconds";
-
 				function startTime() {
 					let today = new Date();
 					let h = today.getHours();
@@ -34,16 +62,15 @@
 					let s = today.getSeconds();
 						s = checkTime(s);
 					let t = setTimeout(startTime, 500);
-					document.getElementById('currentTime').innerHTML = h + ":" + m + ":" + s;
 					document.getElementById("currentDate").innerHTML = "Date : " + today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear();
+					document.getElementById('currentTime').innerHTML = "Time : " + h + ":" + m + ":" + s;
 				}
 				function checkTime(i) {
 					if (i < 10) {i = "0" + i};
 						return i;
 				}
-
 		</script>
-
 		<script type="text/javascript" async></script>
+
 	</body>
 </html>
