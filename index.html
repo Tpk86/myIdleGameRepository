@@ -1,107 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>myIdleGameTitle</title>
-    <!-- Metadata -->
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Wilhelm Omis">
-    <meta name="description" content="Description of my Idle Game and things...">
-    <meta name="keywords" content="Idle,Sound,TSU,The,The Sound Unique,TheSoundUnique,Unique">
-	<meta name="mobile-web-app-capable" content="yes">
-    <meta name="version" content="0.0.1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<title>myIdleGameTitle</title>
 
-    <!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="152x152" href="">
-	<link rel="icon" sizes="196x196" href="android-chrome-192x192">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!-- Metadata -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Wilhelm Omis">
+<meta name="description" content="Description of my Idle Game and things...">
+<meta name="keywords" content="Idle,Sound,TSU,The,The Sound Unique,TheSoundUnique,Unique">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="version" content="0.0.1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--[if lt IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
 
-    <!-- jQuery (noConflict) boilerplate code -->
-    <script type="text/javascript">
-      jQuery.noConflict();
-      jQuery(function(){
-        console.log("jQuery(noConflict) : Page loading complete !");
-      });
-    </script>
+<!-- Css -->
+<link rel="stylesheet" href="css/style.css">
 
-    <!-- Css
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
- -->
-	<link rel="stylesheet" href="style.css">
+</head>
 
-	</head>
+<!-- Body -->
+<body onload="startTime()">
 
-  <body onload="startTime()">
+<div class="div">
+<p>Background color&nbsp;<input type="color" id="inputColor"></p>
+<p>Foreground color&nbsp;<input type="color" id="inputColor"></p>
+</div>
 
-				<!-- Something -->
-				<div>
-					<p id="currentDate"></p>
-					<p id="currentTime"></p>
-				</div>
-				
-				<div>
-					<p id="myPerformance"></p>
-					<p>Seconds spent on page : <input id="seconds-spent" size="6" readonly=""></p>
-					<p>Milliseconds spent here : <input id="milliseconds-spent" size="6" readonly=""></p>
-				</div>
-				
+<div class="div center">
+<button class="button" onclick="toggleLightsFunction()">Toggle Lights</button>
+</div>
 
-				<div>
-				<input class="colorSelector" type="color" id="inputColor">
-				<input class="text" type="text" id="inputText">
-				<input class="button" type="button" id="inputColorButton" value="Click to change the BG color" onClick="changeBGcolor()">
-				</div>
+<div class="div">
+<h1 id="time" class="time">14:00</h1>
+<h3 id="date" class="date">Thursday, 19th November</h3>
+</div>
 
-			<script type="text/javascript" async>
-				document.getElementById("myPerformance").innerHTML = "Browser performance (refresh to check) : " + performance.now() + " milliseconds";
-					function startTime() {
-						let today = new Date();
-						let h = today.getHours();
-						let m = today.getMinutes();
-							m = checkTime(m);
-						let s = today.getSeconds();
-							s = checkTime(s);
-						let t = setTimeout(startTime, 500);
-						document.getElementById("currentDate").innerHTML = "Date : " + today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear();
-						document.getElementById('currentTime').innerHTML = "Time : " + h + ":" + m + ":" + s;
-					}
-					function checkTime(i) {
-						if (i < 10) {i = "0" + i};
-							return i;
-					}
-					function changeBGcolor() {
-						let color = document.getElementById("inputColor").value;
-						document.body.style.backgroundColor = color;
-						document.getElementById("inputText").value = color;
-					}
-			</script>
-			<script type="text/javascript" async>
-				(function(){"use strict";
+<div class="div">
+<p id="pageSec">Seconds spent on page : </p>
+<p id="pageMs">Milliseconds spent here : </p>
+<p id="myPerformance">Browser performance (refresh to check) : </p>
+</div>
 
-				let secondsSpentElement = document.getElementById("seconds-spent");
-				let millisecondsSpentElement = document.getElementById("milliseconds-spent");
+<h1>[ JUST SOME TEXT IN h1 ]</h1>
+<h2>[ JUST SOME TEXT IN h2 ]</h2>
+<h3>[ JUST SOME TEXT IN h3 ]</h3>
+<h4>[ JUST SOME TEXT IN h4 ]</h4>
+<h5>[ JUST SOME TEXT IN h5 ]</h5>
+<h6>[ JUST SOME TEXT IN h6 ]</h6>
 
-				requestAnimationFrame(function updateTimeSpent(){
-					let timeNow = performance.now();
-					
-					secondsSpentElement.value = round(timeNow/1000);
-					millisecondsSpentElement.value = round(timeNow);
-					
-					requestAnimationFrame(updateTimeSpent);
-				});
-				let performance = window.performance, round = Math.round;
-				})();
-			</script>
-		<!-- Libraries / External resources... if needed
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" async></script>
-		<script type="text/javascript" src="https://github.com/Patashu/break_infinity.js" async></script>
-		<script type="text/javascript" async></script>
-		-->
-	</body>
+
+<!-- Empty div template
+<div id="" class="">
+<p></p>
+</div>
+-->
+
+<!-- javaScripts goes here -->
+<!-- jQuery (noConflict) boilerplate code -->
+<script type="text/javascript" src="javaScript/boilerplate.js" async></script>
+<script type="text/javascript" src="javaScript/toggleLights.js" async></script>
+</body>
 </html>
