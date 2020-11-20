@@ -49,6 +49,10 @@ body {
 background-color:#000000;
 border-color:#FFFFFF;
 color:#FFFFFF;
+height:100%;
+width:100%;
+overflow-x:hidden;
+overflow-y:hidden;
 }
 
 /* Button */
