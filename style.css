@@ -1,85 +1,70 @@
+/*
+The asterisk means : ALL 
+General settings for all elements
+*/
+
 * {
-margin: 0;
-padding: 0;
-border: none;
-font-family: Segoe, Arial, sans-serif;
+font-family: 'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+font-size:16px;
+margin-top:4px;
+margin-bottom:4px;
+margin-right:4px;
+margin-left:4px;
+padding-top:8px;
+padding-bottom:8px;
+padding-right:8px;
+padding-left:8px;
+text-shadow:none;
 }
 
-.img{
-position:absolute;
-border: 0px;
-margin: 0px;
-padding: 0px;
-top: 0px;
-left: 0px;
-bottom: 0px;
-right: 0px;
-width:100%;
-height:100%;
-}
-
-.colorSelector{
-position: "";
-top: 4px;
-left: 4px;
-bottom: 4px;
-right: 4px;
-margin: 4px;
-padding: 4px;
-text-align: center;
-}
-
-.text {
-position: "";
-width:auto;
-height:16px;
-top: 4px;
-left: 4px;
-bottom: 4px;
-right: 4px;
-margin: 8px;
-padding: 8px;
-text-align: center;
-font-size: 16px;
-color: white;
-}
-
-body {
-background-image: url("1.jpg");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
-font-size: 16px;
+/* Lights On */
+.bodyLights {
+background-color:#FFFFFF;
+border-color:#000000;
+color:#000000;
 }
 
 /*
-
-div {
-position: "";
-margin: auto;
-width: 25%;
-text-align: center;
-border: 2px solid red;
-padding: 8px;
-}
-
-.button {
-position: "";
-width:auto;
-height:32px;
-top: 4px;
-left: 4px;
-bottom: 4px;
-right: 4px;
-margin: 8px;
-padding: 8px;
-text-align: center;
-font-size: 14px;
-color: black;
-}
-
-header {
-text-align: center;
-}
-
+The Dot means class
 */
+
+.center {
+align-items:center;
+display:flex;
+justify-content:center;
+text-align:center;
+width:auto;
+height:auto;
+}
+
+.div {
+border:2px solid;
+border-radius:0px;
+width:50%;
+}
+
+/* Specific settings for single elements */
+body {
+background-color:#000000;
+border-color:#FFFFFF;
+color:#FFFFFF;
+}
+
+/* Button */
+button {
+border-radius:0px;
+}
+
+/* Section headings */
+h1 {font-size:48px;}
+h2 {font-size:40px;}
+h3 {font-size:32px;}
+h4 {font-size:24px;}
+h5 {font-size:16;}
+h6 {font-size:8px;}
+
+/* Input field */
+input {
+height:32px;
+width:32px;
+}
