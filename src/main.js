@@ -1,11 +1,11 @@
 import './style.scss';
 
-class Test {
-    constructor() {
-        const test = "hello world";
-
-        console.log(test);
+class Tabs {
+    init() {
+        const tab = document.querySelector(".tab2-content");
+        tab.classList.remove("hidden");
     }
 } 
 
-new Test();
+const tabs = new Tabs();
+tabs.init();
