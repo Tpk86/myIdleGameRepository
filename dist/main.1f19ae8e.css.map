@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AACI;EACI;EACA","file":"main.1f19ae8e.css","sourceRoot":"..\\src","sourcesContent":["body {\r\n    div {\r\n        color: red;\r\n        font-size: 300px;\r\n    }\r\n}"]}
