@@ -1,6 +1,7 @@
+@import './reset.scss';
+
 body {
-    div {
-        color: red;
-        font-size: 300px;
+    .hidden {
+        display: none;
     }
 }
