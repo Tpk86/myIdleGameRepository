@@ -208,8 +208,35 @@ var Tabs = /*#__PURE__*/function () {
   _createClass(Tabs, [{
     key: "init",
     value: function init() {
-      var tab = document.querySelector(".tab2-content");
+      this._setEvents();
+    }
+  }, {
+    key: "_showClickedTab",
+    value: function _showClickedTab(ev) {
+      var tabButtonClassName = ev.target.className;
+      var tab = document.querySelector(".".concat(tabButtonClassName, "-content"));
+      var $tabs = document.querySelectorAll(".tab-content-container div");
+      $tabs.forEach(function (el) {
+        return el.classList.add("hidden");
+      });
       tab.classList.remove("hidden");
+    }
+  }, {
+    key: "_setToggleTabVisibilityEvent",
+    value: function _setToggleTabVisibilityEvent() {
+      var _this = this;
+
+      var $tabsButtons = document.querySelectorAll(".button-tab-container button");
+      $tabsButtons.forEach(function (el) {
+        return el.addEventListener("click", function (ev) {
+          return _this._showClickedTab(ev);
+        });
+      });
+    }
+  }, {
+    key: "_setEvents",
+    value: function _setEvents() {
+      this._setToggleTabVisibilityEvent();
     }
   }]);
 
@@ -246,7 +273,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1028" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6058" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
