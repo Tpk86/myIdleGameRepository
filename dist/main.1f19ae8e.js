@@ -117,7 +117,52 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"Motd.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Motd = /*#__PURE__*/function () {
+  function Motd() {
+    _classCallCheck(this, Motd);
+
+    this.messages = ["Woman was God's second mistake.", "He who has a why to live can bear almost any how.", "When you stare into the abyss the abyss stares back at you.", "To live is to suffer, to survive is to find some meaning in the suffering.", "Without music, life would be a mistake.", "There are no facts, only interpretations.", "Blessed are the forgetful: for they get the better even of their blunders.", "I cannot believe in a God who wants to be praised all the time.", "That which does not kill us makes us stronger.", "He who fights with monsters might take care lest he thereby become a monster. And if you gaze for long into an abyss, the abyss gazes also into you."];
+    this.motdText = document.querySelector(".motd span");
+  }
+
+  _createClass(Motd, [{
+    key: "juggleMessages",
+    value: function juggleMessages() {
+      var messageNumber = Math.floor(Math.random() * this.messages.length);
+      this.motdText.innerHTML = this.messages[messageNumber];
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.juggleMessages();
+      setInterval(function () {
+        return _this.juggleMessages();
+      }, 15000);
+    }
+  }]);
+
+  return Motd;
+}();
+
+var _default = Motd;
+exports.default = _default;
+},{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -189,10 +234,13 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Tabs.js":[function(require,module,exports) {
 "use strict";
 
-require("./style.scss");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -243,9 +291,24 @@ var Tabs = /*#__PURE__*/function () {
   return Tabs;
 }();
 
-var tabs = new Tabs();
+var _default = Tabs;
+exports.default = _default;
+},{}],"main.js":[function(require,module,exports) {
+"use strict";
+
+var _Motd = _interopRequireDefault(require("./Motd"));
+
+require("./style.scss");
+
+var _Tabs = _interopRequireDefault(require("./Tabs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var tabs = new _Tabs.default();
+var motd = new _Motd.default();
 tabs.init();
-},{"./style.scss":"style.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+motd.init();
+},{"./Motd":"Motd.js","./style.scss":"style.scss","./Tabs":"Tabs.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -273,7 +336,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6058" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4544" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

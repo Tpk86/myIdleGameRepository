@@ -368,4 +368,28 @@ body .hidden {
   display: none;
 }
 
+.motd {
+  overflow: hidden;
+  --offset: 100vw;
+  --move-initial: calc(var(--offset));
+  --move-final: calc(-220vw + var(--offset));
+}
+
+.motd span {
+  display: flex;
+  animation: marquee 15s linear infinite;
+  font-size: 24px;
+  animation-play-state: running;
+  width: 120vw;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+
 /*# sourceMappingURL=/main.1f19ae8e.css.map */
