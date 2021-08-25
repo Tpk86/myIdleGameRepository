@@ -1,32 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer="" src="/main.1f19ae8e.js"></script>
-<link rel="stylesheet" href="/main.1f19ae8e.css"></head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova</title>
+<!-- <script defer src="main.js"></script> -->
+</head>
 <body>
-    <div class="button-tab-container">
-        <button class="tab1">Tab1</button>
-        <button class="tab2">Tab2</button>
-        <button class="tab3">Tab3</button>
-        <button class="tab4">Tab4</button>
-    </div>
-    <div class="tab-content-container">
-        <div class="tab1-content">
-            Lorem ipsum
-        </div>
-        <div class="tab2-content hidden">
-            Lorem ipsum sit amet
-        </div>
-        <div class="tab3-content hidden">
-            Lorem ipsum dolor
-        </div>
-        <div class="tab4-content hidden">
-            Test
-        </div>
-    </div>
+<div>
+<div>
+<p id="collectedEnergy"></p>
+</div>
+<div>
+<button onclick="collectEnergy();">Collect energy</button>
+</div>
+<div>
+<button onclick="buyEnergyPerClick()" id="perClickUpgrade">Upgrade Battery (Currently Level 1) Cost : 10 Energy</button>
+</div>
+</div>
+<script>var myEnergy = {
+  energy: 0,
+  energyPerClick: 1,
+  energyPerClickCost: 10
+};
+
+function collectEnergy() {
+  // myEnergy.energy += myEnergy.energyPerClick;
+  myEnergy.energy = myEnergy.energy + myEnergy.energyPerClick;
+  document.getElementById("collectedEnergy").innerHTML = "Energy : " + myEnergy.energy;
+}
+
+function buyEnergyPerClick() {
+  if (myEnergy.energy >= myEnergy.energyPerClickCost) {
+    myEnergy.energy -= myEnergy.energyPerClickCost;
+    myEnergy.energyPerClick += 1;
+    myEnergy.energyPerClickCost *= 2;
+    document.getElementById("collectedEnergy").innerHTML = "Energy : " + myEnergy.energy;
+    document.getElementById("perClickUpgrade").innerHTML = "Upgrade Battery (Currently Level " + myEnergy.energyPerClick + ") Cost : " + myEnergy.energyPerClickCost + " Energy";
+  }
+}
+
+var mainEnergyeLoop = window.setInterval(function () {
+  collectEnergy();
+}, 1000);</script>
 </body>
 </html>

@@ -184,7 +184,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"reset.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -192,60 +192,19 @@ module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
-require("./style.scss");
+require("./reset.scss");
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var myEnergy = {
+  energy: 0,
+  energyPerClick: 1
+};
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Tabs = /*#__PURE__*/function () {
-  function Tabs() {
-    _classCallCheck(this, Tabs);
-  }
-
-  _createClass(Tabs, [{
-    key: "init",
-    value: function init() {
-      this._setEvents();
-    }
-  }, {
-    key: "_showClickedTab",
-    value: function _showClickedTab(ev) {
-      var tabButtonClassName = ev.target.className;
-      var tab = document.querySelector(".".concat(tabButtonClassName, "-content"));
-      var $tabs = document.querySelectorAll(".tab-content-container div");
-      $tabs.forEach(function (el) {
-        return el.classList.add("hidden");
-      });
-      tab.classList.remove("hidden");
-    }
-  }, {
-    key: "_setToggleTabVisibilityEvent",
-    value: function _setToggleTabVisibilityEvent() {
-      var _this = this;
-
-      var $tabsButtons = document.querySelectorAll(".button-tab-container button");
-      $tabsButtons.forEach(function (el) {
-        return el.addEventListener("click", function (ev) {
-          return _this._showClickedTab(ev);
-        });
-      });
-    }
-  }, {
-    key: "_setEvents",
-    value: function _setEvents() {
-      this._setToggleTabVisibilityEvent();
-    }
-  }]);
-
-  return Tabs;
-}();
-
-var tabs = new Tabs();
-tabs.init();
-},{"./style.scss":"style.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function collectEnergy() {
+  // myEnergy.energy += myEnergy.energyPerClick;
+  myEnergy.energy = myEnergy.energy + myEnergy.energyPerClick;
+  document.getElementById("collectedEnergy").innerHTML = "collectedEnergy : " + myEnergy.energy;
+}
+},{"./reset.scss":"reset.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -273,7 +232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54735" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64686" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
