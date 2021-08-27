@@ -1,0 +1,49 @@
+.button-tab-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    button {
+        border-radius: 6px 6px 0 0;
+
+        font-size: 20px;
+        background-color: $background-color;
+        color: $text-color;
+
+        border: {
+            left: 1px solid $text-color;
+            right: 1px solid $text-color;
+            top: 1px solid $text-color;
+            bottom: none;
+        }
+    }
+}
+
+.tab-content-container {
+    margin {
+        left: 5px;
+        right: 5px;
+    }
+
+    border-top: 2px solid $text-color;
+
+    div {
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+}
+
+.energyCollector {
+    * {
+        color: $text-color;
+    }
+
+    .collectedEnergy {
+        margin-bottom: 5px;
+    }
+
+    button {
+        background-color: $background-color;
+        border: 1px solid $text-color;
+    }
+}

@@ -364,10 +364,6 @@ textarea {
   padding: 0.2em 0;
 }
 
-body .hidden {
-  display: none;
-}
-
 .motd {
   overflow: hidden;
   --offset: 100vw;
@@ -376,6 +372,7 @@ body .hidden {
 }
 
 .motd span {
+  color: #37ca24;
   display: flex;
   animation: marquee 15s linear infinite;
   font-size: 24px;
@@ -390,6 +387,51 @@ body .hidden {
   100% {
     transform: translate3d(var(--move-final), 0, 0);
   }
+}
+.button-tab-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.button-tab-container button {
+  border-radius: 6px 6px 0 0;
+  font-size: 20px;
+  background-color: #221f1f;
+  color: #37ca24;
+  border-left: 1px solid #37ca24;
+  border-right: 1px solid #37ca24;
+  border-top: 1px solid #37ca24;
+  border-bottom: none;
+}
+
+.tab-content-container {
+  border-top: 2px solid #37ca24;
+}
+.tab-content-container margin {
+  left: 5px;
+  right: 5px;
+}
+.tab-content-container div {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.energyCollector * {
+  color: #37ca24;
+}
+.energyCollector .collectedEnergy {
+  margin-bottom: 5px;
+}
+.energyCollector button {
+  background-color: #221f1f;
+  border: 1px solid #37ca24;
+}
+
+body {
+  background-color: #221f1f;
+}
+body .hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */

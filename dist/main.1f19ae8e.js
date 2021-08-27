@@ -117,52 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"Motd.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Motd = /*#__PURE__*/function () {
-  function Motd() {
-    _classCallCheck(this, Motd);
-
-    this.messages = ["Woman was God's second mistake.", "He who has a why to live can bear almost any how.", "When you stare into the abyss the abyss stares back at you.", "To live is to suffer, to survive is to find some meaning in the suffering.", "Without music, life would be a mistake.", "There are no facts, only interpretations.", "Blessed are the forgetful: for they get the better even of their blunders.", "I cannot believe in a God who wants to be praised all the time.", "That which does not kill us makes us stronger.", "He who fights with monsters might take care lest he thereby become a monster. And if you gaze for long into an abyss, the abyss gazes also into you."];
-    this.motdText = document.querySelector(".motd span");
-  }
-
-  _createClass(Motd, [{
-    key: "juggleMessages",
-    value: function juggleMessages() {
-      var messageNumber = Math.floor(Math.random() * this.messages.length);
-      this.motdText.innerHTML = this.messages[messageNumber];
-    }
-  }, {
-    key: "init",
-    value: function init() {
-      var _this = this;
-
-      this.juggleMessages();
-      setInterval(function () {
-        return _this.juggleMessages();
-      }, 15000);
-    }
-  }]);
-
-  return Motd;
-}();
-
-var _default = Motd;
-exports.default = _default;
-},{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -234,7 +189,52 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Tabs.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Motd.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Motd = /*#__PURE__*/function () {
+  function Motd() {
+    _classCallCheck(this, Motd);
+
+    this.messages = ["Woman was God's second mistake.", "He who has a why to live can bear almost any how.", "When you stare into the abyss the abyss stares back at you.", "To live is to suffer, to survive is to find some meaning in the suffering.", "Without music, life would be a mistake.", "There are no facts, only interpretations.", "Blessed are the forgetful: for they get the better even of their blunders.", "I cannot believe in a God who wants to be praised all the time.", "That which does not kill us makes us stronger.", "He who fights with monsters might take care lest he thereby become a monster. And if you gaze for long into an abyss, the abyss gazes also into you."];
+    this.motdText = document.querySelector(".motd span");
+  }
+
+  _createClass(Motd, [{
+    key: "juggleMessages",
+    value: function juggleMessages() {
+      var messageNumber = Math.floor(Math.random() * this.messages.length);
+      this.motdText.innerHTML = this.messages[messageNumber];
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.juggleMessages();
+      setInterval(function () {
+        return _this.juggleMessages();
+      }, 15000);
+    }
+  }]);
+
+  return Motd;
+}();
+
+var _default = Motd;
+exports.default = _default;
+},{}],"Tabs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -293,22 +293,110 @@ var Tabs = /*#__PURE__*/function () {
 
 var _default = Tabs;
 exports.default = _default;
+},{}],"CollectEnergy.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CollectEnergy = /*#__PURE__*/function () {
+  function CollectEnergy() {
+    _classCallCheck(this, CollectEnergy);
+
+    this.myEnergy = {
+      energy: 0,
+      energyPerClick: 1,
+      energyPerClickCost: 10
+    };
+    this.$collectedEnergy = document.querySelector(".collectedEnergy");
+    this.$perClickUpgradeBtn = document.querySelector(".perClickUpgradeBtn");
+    this.$collectEnergyBtn = document.querySelector(".collectEnergyBtn");
+  }
+
+  _createClass(CollectEnergy, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      window.setInterval(function () {
+        _this._collectEnergy();
+      }, 1000);
+
+      this._setEvents();
+    }
+  }, {
+    key: "_setEvents",
+    value: function _setEvents() {
+      var _this2 = this;
+
+      this.$collectEnergyBtn.addEventListener("click", function () {
+        return _this2._collectEnergy();
+      });
+      this.$perClickUpgradeBtn.addEventListener("click", function () {
+        return _this2._buyEnergyPerClick();
+      });
+    }
+  }, {
+    key: "_update",
+    value: function _update() {
+      var energyCounterStr = "Energy: ".concat(this.myEnergy.energy);
+      var buttonStr = "Upgrade Battery (Currently Level ".concat(this.myEnergy.energyPerClick, ") Cost: ").concat(this.myEnergy.energyPerClickCost, " Energy");
+      this.$collectedEnergy.innerHTML = energyCounterStr;
+      this.$perClickUpgradeBtn.innerHTML = buttonStr;
+    }
+  }, {
+    key: "_collectEnergy",
+    value: function _collectEnergy() {
+      this.myEnergy.energy = this.myEnergy.energy + this.myEnergy.energyPerClick;
+
+      this._update();
+    }
+  }, {
+    key: "_buyEnergyPerClick",
+    value: function _buyEnergyPerClick() {
+      if (this.myEnergy.energy >= this.myEnergy.energyPerClickCost) {
+        this.myEnergy.energy -= this.myEnergy.energyPerClickCost;
+        this.myEnergy.energyPerClick += 1;
+        this.myEnergy.energyPerClickCost *= 2;
+
+        this._update();
+      }
+    }
+  }]);
+
+  return CollectEnergy;
+}();
+
+var _default = CollectEnergy;
+exports.default = _default;
 },{}],"main.js":[function(require,module,exports) {
 "use strict";
 
-var _Motd = _interopRequireDefault(require("./Motd"));
-
 require("./style.scss");
 
+var _Motd = _interopRequireDefault(require("./Motd"));
+
 var _Tabs = _interopRequireDefault(require("./Tabs"));
+
+var _CollectEnergy = _interopRequireDefault(require("./CollectEnergy"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tabs = new _Tabs.default();
 var motd = new _Motd.default();
+var collectEnergy = new _CollectEnergy.default();
 tabs.init();
 motd.init();
-},{"./Motd":"Motd.js","./style.scss":"style.scss","./Tabs":"Tabs.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+collectEnergy.init();
+},{"./style.scss":"style.scss","./Motd":"Motd.js","./Tabs":"Tabs.js","./CollectEnergy":"CollectEnergy.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -336,7 +424,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4544" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1076" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
