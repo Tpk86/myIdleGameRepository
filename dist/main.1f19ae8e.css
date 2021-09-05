@@ -369,6 +369,7 @@ textarea {
   --offset: 100vw;
   --move-initial: calc(var(--offset));
   --move-final: calc(-220vw + var(--offset));
+  background-color: black;
 }
 
 .motd span {
@@ -398,10 +399,12 @@ textarea {
   font-size: 20px;
   background-color: #221f1f;
   color: #37ca24;
-  border-left: 1px solid #37ca24;
-  border-right: 1px solid #37ca24;
-  border-top: 1px solid #37ca24;
+  border-left: 2px solid #37ca24;
+  border-right: 2px solid #37ca24;
+  border-top: 2px solid #37ca24;
   border-bottom: none;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .tab-content-container {
@@ -416,7 +419,7 @@ textarea {
   margin-left: 50px;
 }
 
-.energyCollector * {
+.energyCollector div {
   color: #37ca24;
 }
 .energyCollector .collectedEnergy {
@@ -427,8 +430,31 @@ textarea {
   border: 1px solid #37ca24;
 }
 
+/*  
+    https://www.dafont.com/it/generic-mobile-system.font
+*/
+@font-face {
+  font-family: GenericMobileSystem;
+  src: url(/GenericMobileSystem.c5d4cb60.ttf);
+}
+@font-face {
+  font-family: GenericMobileSystemNuevo;
+  src: url(/GenericMobileSystemNuevo.f059962f.ttf);
+}
+@font-face {
+  font-family: GenericMobileSystemNuevoO;
+  src: url(/GenericMobileSystemNuevoO.83e1139a.ttf);
+}
+@font-face {
+  font-family: GenericMobileSystemO;
+  src: url(/GenericMobileSystemO.6d1288a5.ttf);
+}
 body {
   background-color: #221f1f;
+}
+body * {
+  color: #37ca24;
+  font-family: GenericMobileSystem;
 }
 body .hidden {
   display: none;

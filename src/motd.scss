@@ -3,6 +3,7 @@
     --offset: 100vw;
     --move-initial: calc(var(--offset));
     --move-final: calc(-220vw + var(--offset));
+    background-color: $motd-background;
 }
 
 .motd span {

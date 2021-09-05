@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Motd.js":[function(require,module,exports) {
+},{"./..\\assets\\fonts\\GenericMobileSystem.ttf":[["GenericMobileSystem.c5d4cb60.ttf","../assets/fonts/GenericMobileSystem.ttf"],"../assets/fonts/GenericMobileSystem.ttf"],"./..\\assets\\fonts\\GenericMobileSystemNuevo.ttf":[["GenericMobileSystemNuevo.f059962f.ttf","../assets/fonts/GenericMobileSystemNuevo.ttf"],"../assets/fonts/GenericMobileSystemNuevo.ttf"],"./..\\assets\\fonts\\GenericMobileSystemNuevoO.ttf":[["GenericMobileSystemNuevoO.83e1139a.ttf","../assets/fonts/GenericMobileSystemNuevoO.ttf"],"../assets/fonts/GenericMobileSystemNuevoO.ttf"],"./..\\assets\\fonts\\GenericMobileSystemO.ttf":[["GenericMobileSystemO.6d1288a5.ttf","../assets/fonts/GenericMobileSystemO.ttf"],"../assets/fonts/GenericMobileSystemO.ttf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Motd.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -424,7 +424,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1076" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "23531" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

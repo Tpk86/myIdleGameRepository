@@ -11,10 +11,15 @@
         color: $text-color;
 
         border: {
-            left: 1px solid $text-color;
-            right: 1px solid $text-color;
-            top: 1px solid $text-color;
+            left: 2px solid $text-color;
+            right: 2px solid $text-color;
+            top: 2px solid $text-color;
             bottom: none;
+        }
+
+        margin: {
+            left: 2px;
+            right: 2px;
         }
     }
 }
@@ -34,7 +39,7 @@
 }
 
 .energyCollector {
-    * {
+    div {
         color: $text-color;
     }
 

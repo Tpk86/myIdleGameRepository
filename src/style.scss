@@ -2,9 +2,15 @@
 @import './reset.scss';
 @import './motd.scss';
 @import './tabs.scss';
+@import './fonts.scss';
 
 body {
     background-color: $background-color;
+    
+    * {
+        color: $text-color;
+        font-family: GenericMobileSystem;
+    }
 
     .hidden {
         display: none;
