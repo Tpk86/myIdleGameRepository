@@ -39,6 +39,12 @@
 }
 
 .energyCollector {
+    display: flex;
+
+    img {
+        height: 60px;
+    }
+
     div {
         color: $text-color;
     }

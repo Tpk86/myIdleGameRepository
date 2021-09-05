@@ -419,6 +419,12 @@ textarea {
   margin-left: 50px;
 }
 
+.energyCollector {
+  display: flex;
+}
+.energyCollector img {
+  height: 60px;
+}
 .energyCollector div {
   color: #37ca24;
 }
