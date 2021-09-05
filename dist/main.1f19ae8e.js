@@ -263,7 +263,7 @@ var Tabs = /*#__PURE__*/function () {
     value: function _showClickedTab(ev) {
       var tabButtonClassName = ev.target.className;
       var tab = document.querySelector(".".concat(tabButtonClassName, "-content"));
-      var $tabs = document.querySelectorAll(".tab-content-container div");
+      var $tabs = document.querySelectorAll(".tab-content-container > div");
       $tabs.forEach(function (el) {
         return el.classList.add("hidden");
       });

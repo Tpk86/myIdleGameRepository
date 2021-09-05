@@ -6,7 +6,7 @@ class Tabs {
     _showClickedTab(ev) {
         const tabButtonClassName = ev.target.className;
         const tab = document.querySelector(`.${tabButtonClassName}-content`);
-        const $tabs = document.querySelectorAll(".tab-content-container div");
+        const $tabs = document.querySelectorAll(".tab-content-container > div");
         $tabs.forEach(el => el.classList.add("hidden"));
 
         tab.classList.remove("hidden");
